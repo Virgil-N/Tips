@@ -154,7 +154,6 @@ http {
             proxy_set_header  Host $host;
             proxy_set_header  X-Real-IP    $remote_addr;
             proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-            # proxy_pass http://218.205.107.96:9900/aosh;
             proxy_pass http://127.0.0.1:9900/aosh;
             #proxy_cookie_path ~*^ /aosh/;
         }

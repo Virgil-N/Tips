@@ -19,3 +19,5 @@ Date: 2020-06-09T19:52:58+08:00
 - 提交所有tag: git push origin --tags
 
 - 提交某个tag: git push origin v1.0
+
+- 修改git仓库地址: git remote set-url origin https://gitee.com/jouypub/json.git

@@ -7,6 +7,7 @@ Date: 2020-10-04T19:52:58+08:00
 
 ## LINUX
 
+- window ssh连接linux命令: ssh account@ip
 - 查看某个应用的进程及结束进程: 命令窗口输入 `ps -ef | grep '应用名'`
 - 使用 `kill -9  进程号` 强制杀死该进程
 - 查看端口是否开放: `netstat -ntpl grep 端口号` (TCP类型), `netstat -nupl grep 端口号` (UDP类型)

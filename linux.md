@@ -22,3 +22,11 @@ rm -f /var/log/httpd/access.log
 - -m 分配权限
 - -p 指定路径
 例: mkdir -m 711 test2
+- scp 复制命令: scp -r(加-r代表复制目录) 本地主机目录或文件路径 biny@192.168.1.220:~(~代表用户根目录，也可以使用其他目录)
+- cp 命令: cp -r 源文件目录 目标路径
+
+## linux 中 nginx
+
+- 日志目录 /var/log/nginx
+- 文件目录 /usr/share/nginx/html
+- 配置目录 /etc/nginx

@@ -26,6 +26,7 @@ replace github.com/Virgil-N/testApp => ./testApp
 ---
 
 ### 项目目录结构
+
 /cmd
 main函数文件（比如 /cmd/myapp.go）目录，这个目录下面，每个文件在编译之后都会生成一个可执行的文件。
 
@@ -83,6 +84,8 @@ web服务所需要的静态文件
 ### 编译
 
 - 运行go build命令，只需要将生成的可执行文件及资源目录以当前相对的路径拷贝放到其他任何目录下即可运行
+
+- 在Linux和Mac系统上编译wasm文件，命令为：`GOARCH=wasm GOOS=js go build -o web/app.wasm`，Windows系统上为：`$env:GOARCH="wasm";$env:GOOS="js"; go build -o web/app.wasm`
 
 ### fyne
 

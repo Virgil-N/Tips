@@ -16,7 +16,7 @@ Date: 2020-06-09T19:52:58+08:00
 - 将本地仓库和远程仓库关联: git remote add origin git@github.com:YotrolZ/helloTest.git
 - 修改git仓库地址: git remote set-url origin https://gitee.com/jouypub/json.git
 
-### 设置git代理：
+### 设置git代理
 
 - git config --global https.proxy http://127.0.0.1:1080
 - git config --global https.proxy https://127.0.0.1:1080
@@ -26,10 +26,11 @@ Date: 2020-06-09T19:52:58+08:00
 - git config --global http.proxy 'socks5://127.0.0.1:1080'
 - git config --global https.proxy 'socks5://127.0.0.1:1080'
 
-#### 或者 path/to/install/Git/etc/bash.bashrc文件修改:
+#### 或者 path/to/install/Git/etc/bash.bashrc文件修改
+
 - export http_proxy="http://127.0.0.1:1080/pac?auth=xxxx"
 - export https_proxy="http://127.0.0.1:1080/pac?auth=xxxx"
 
 ### 问题解决方案
-- 出现fatal: refusing to merge unrelated histories，在命令后添加`--allow-unrelated-histories`
 
+- 出现fatal: refusing to merge unrelated histories，在命令后添加`--allow-unrelated-histories`

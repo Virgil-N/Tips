@@ -1,0 +1,60 @@
+{
+  "admin": {
+    "disabled": false,
+    "listen": "127.0.0.1:2020",
+    "enforce_origin": false,
+    "origins": ["127.0.0.1:2021"],
+    "config": {
+      "persist": false
+    }
+  },
+  "apps": {
+    "http": {
+      "servers": {
+        "app1": {
+          "listen": ["127.0.0.1:2021"],
+          "routes": [
+            {
+              "handle": [
+                {
+                  "handler": "file_server",
+                  "root": "./web",
+                  "hide": [],
+                  "index_names": ["index.html"]
+                }
+              ]
+            }
+          ],
+          "automatic_https": {
+            "disable": false,
+            "disable_redirects": false,
+            "skip": [],
+            "skip_certificates": [],
+            "ignore_loaded_certificates": false
+          },
+          "strict_sni_host": false,
+          "logs": {
+            "skip_hosts": [],
+            "skip_unmapped_hosts": false
+          },
+          "experimental_http3": false,
+          "allow_h2c": false
+        }
+      }
+    },
+    "tls": {
+      "automation": {
+        "policies": [
+          {
+            "subjects": ["127.0.0.1:2021"],
+            "issuers": [
+              {
+                "module": "internal"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

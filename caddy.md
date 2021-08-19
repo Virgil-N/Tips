@@ -6,7 +6,9 @@ Date: 2020-08-04T19:52:58+08:00
 
 ## KEEP IN MIND
 
-## 以下是项目的配置，接口请求使用代理
+- 运行基本命令：caddy start --config ./caddy.json
+
+## 以下是公司项目的配置，接口请求使用代理
 
 ```
   localhost:2020 {

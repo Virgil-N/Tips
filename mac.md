@@ -1,0 +1,2 @@
+- 查看进程 sudo lsof -i:3000
+- 杀死进程 sudo kill -9 3000

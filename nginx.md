@@ -74,6 +74,49 @@ http {
     # upstream documentQuery  {
     #     server https://20.26.85.26:6067/api/v1/;
     # }
+    
+    # 陕西交投项目配置
+    server {
+        listen 8082;
+        server_name 127.0.0.1;
+        
+        root /opt/homebrew/var/www;
+        
+        location = / {
+            rewrite ^.+ http://127.0.0.1:8082/shanxi_jiaotou break;
+        }
+        
+        location ^~ /shanxi_jiaotou {
+            try_files $uri $uri/ /shanxi_jiaotou/index.html;
+        }
+        
+        location ^~ /shanxi_jiaotou/api {
+            include  uwsgi_params;
+            proxy_set_header  Host $host;
+            proxy_set_header  X-Real-IP    $remote_addr;
+            proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_pass_request_headers on;
+            proxy_pass http://192.168.1.101:8098/;
+        }
+        
+        # 图片文件跨域设置
+        location ~.(png|jpe|jpeg|gif)$ {
+            add_header Access-Control-Allow-Origin *;
+        }
+        
+        error_page  404              /404.html;
+
+        # 405处理 To allow POST on static pages 允许静态页使用POST方法
+        # error_page  405     =200 $uri;
+
+        # redirect server error pages to the static page /50x.html
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   /opt/homebrew/var/www/shanxi_jiaotou;
+        }
+    }
+    
 
     server {
         listen 80;
